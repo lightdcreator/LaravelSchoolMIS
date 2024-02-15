@@ -29,26 +29,36 @@
                                                 <th>Salary</th>
                                             </tr>
                                         </thead>
+                                        <tr>
+                                            <th width="5%">SL</th>
+                                            <th>Role</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Code</th>
+                                            <th width="25%">Action</th>
+
+                                        </tr>
+                                        </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                            </tr>
+                                            @foreach ($allData as $key => $user)
+                                                <tr>
+                                                    <td>{{ $key + 1 }}</td>
+                                                    <td> {{ $user->role }}</td>
+                                                    <td>{{ $user->name }}</td>
+                                                    <td>{{ $user->email }}</td>
+                                                    <td>{{ $user->code }}</td>
+                                                    <td>
+                                                        <a href="" class="btn btn-info">Edit</a>
+                                                        <a href="" class="btn btn-danger" id="delete">Delete</a>
+
+                                                    </td>
+
+                                                </tr>
+                                            @endforeach
 
                                         </tbody>
                                         <tfoot>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                            </tr>
+
                                         </tfoot>
                                     </table>
                                 </div>
@@ -57,7 +67,6 @@
                         </div>
                         <!-- /.box -->
 
-                        <!-- /.box -->
                     </div>
                     <!-- /.col -->
                 </div>
