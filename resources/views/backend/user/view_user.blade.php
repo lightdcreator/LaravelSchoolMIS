@@ -20,30 +20,24 @@
                                 <div class="table-responsive">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                            </tr>
-                                        </thead>
-                                        <tr>
-                                            <th width="5%">SL</th>
-                                            <th>Role</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Code</th>
-                                            <th width="25%">Action</th>
 
-                                        </tr>
+                                            <tr>
+                                                <th width="5%">SL</th>
+                                                <th>Role</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Code</th>
+                                                <th width="25%">Action</th>
+
+                                            </tr>
+
                                         </thead>
+
                                         <tbody>
                                             @foreach ($allData as $key => $user)
                                                 <tr>
                                                     <td>{{ $key + 1 }}</td>
-                                                    <td> {{ $user->role }}</td>
+                                                    <td> {{ $user->usertype }}</td>
                                                     <td>{{ $user->name }}</td>
                                                     <td>{{ $user->email }}</td>
                                                     <td>{{ $user->code }}</td>
