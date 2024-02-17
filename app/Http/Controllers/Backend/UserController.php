@@ -22,4 +22,10 @@ class UserController extends Controller
         // -----Testing Die And Dump---------------
         // dd('view user');
     }
+
+    public function UserAdd()
+    {
+
+        return view('backend.user.add_user');
+    }
 }
