@@ -46,7 +46,13 @@ class UserController extends Controller
         $data->usertype = $request->usertype;
         $data->password = bcrypt($request->password);
         $data->save();
-        return redirect()->route('user.view');
+
+        $notification = array(
+    		'message' => 'User Inserted Successfully',
+    		'alert-type' => 'success'
+    	);
+
+     return redirect()->route('user.view')->with($notification);
     }
 
 
