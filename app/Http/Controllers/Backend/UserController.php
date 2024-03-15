@@ -62,6 +62,24 @@ class UserController extends Controller
 
     }
 
+    public function UserUpdate(Request $request, $id){
+
+    	$data = User::find($id);
+    	$data->name = $request->name;
+    	$data->email = $request->email;
+        $data->role = $request->role;
+    	$data->save();
+
+    	$notification = array(
+    		'message' => 'User Updated Successfully',
+    		'alert-type' => 'info'
+    	);
+
+    	return redirect()->route('user.view')->with($notification);
+
+    }
+
+
 
     // public function UserStore(Request $request)
     // {
